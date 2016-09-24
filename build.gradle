@@ -1,0 +1,104 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "minecrell"
+            url = "http://repo.minecrell.net/releases"
+        }
+        maven {
+            name = "sponge"
+            url = "http://repo.spongepowered.org/maven"
+        }
+    }
+
+    dependencies {
+        classpath "net.minecrell:VanillaGradle:2.0.3_1"
+        classpath "net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT"
+        classpath "org.spongepowered:mixingradle:0.4-SNAPSHOT"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'com.github.hierynomus.license' version '0.12.1'
+    id 'ninja.miserable.blossom' version '1.0.1'
+}
+
+description = 'Mixins for Nucleus'
+ext.url = 'http://nucleuspowered.org'
+
+defaultTasks 'licenseFormat clean build'
+
+apply plugin: "net.minecrell.vanilla.server.library"
+apply plugin: "org.spongepowered.mixin"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+group 'io.github.nucleuspowered'
+version '0.11.0-5.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spongepowered-repo'
+        url = 'http://repo.spongepowered.org/maven/'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.spongepowered:spongeapi:5.0.0-SNAPSHOT'
+    compile("org.spongepowered:mixin:0.5.13-SNAPSHOT") {
+        exclude module: "launchwrapper"
+        exclude module: "guava"
+    }
+}
+
+mixin {
+    add sourceSets.main, "main.nucleus_mixins.json"
+}
+
+jar {
+    manifest {
+        attributes(
+                "MixinConfigs": "mixins.nucleus_mixins.json",
+                "tweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+                "TweakOrder": 0,
+                "FMLAT": "nucleus_mixins_at.cfg"
+        )
+    }
+}
+
+minecraft {
+    version = "1.10.2"
+    mappings = "snapshot_20160822"
+}
+
+reobf.jar {
+    mappingType = "SEARGE"
+}
+
+license {
+    ext.name = project.name
+
+    exclude "**/*.info"
+    exclude "**/*.json"
+    exclude "**/*.cfg"
+    exclude "assets/**"
+    exclude "*.properties"
+
+    header file('HEADER.txt')
+    sourceSets = project.sourceSets
+
+    ignoreFailures false
+    strictCheck true
+
+    mapping {
+        java = 'SLASHSTAR_STYLE'
+    }
+}
