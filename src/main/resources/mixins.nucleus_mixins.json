@@ -7,7 +7,8 @@
     "mixins": [
         "MixinAnvilChunkLoader",
         "MixinChunkProviderServer",
-        "MixinWorld"
+        "MixinWorld",
+        "MixinWorldServer"
     ],
     "injectors": {
         "defaultRequire": 1

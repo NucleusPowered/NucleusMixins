@@ -13,8 +13,8 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import java.io.IOException;
 
-@Mixin(value = WorldServer.class, priority = 0)
-public abstract class MixinWorldServer implements INucleusMixinWorldServer {
+@Mixin(value = WorldServer.class)
+public abstract class MixinWorldServer extends MixinWorld implements INucleusMixinWorldServer {
 
     @Shadow protected abstract void saveLevel() throws MinecraftException;
 
