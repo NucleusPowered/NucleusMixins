@@ -5,9 +5,8 @@
 package io.github.nucleuspowered.nucleus.mixins.interfaces;
 
 import com.flowpowered.math.vector.Vector3i;
-import net.minecraft.world.chunk.IChunkProvider;
 
-public interface INucleusMixinChunkProviderServer extends IChunkProvider {
+public interface INucleusMixinChunkProviderServer {
 
     /**
      * Attempts to see if the chunk in question has been loaded before.

@@ -5,9 +5,8 @@
 package io.github.nucleuspowered.nucleus.mixins.interfaces;
 
 import com.flowpowered.math.vector.Vector3i;
-import net.minecraft.world.IBlockAccess;
 
-public interface INucleusMixinWorld extends IBlockAccess {
+public interface INucleusMixinWorld {
 
     /**
      * Returns whether the specified chunk has been generated
