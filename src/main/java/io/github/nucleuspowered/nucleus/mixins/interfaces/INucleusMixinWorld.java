@@ -6,6 +6,8 @@ package io.github.nucleuspowered.nucleus.mixins.interfaces;
 
 import com.flowpowered.math.vector.Vector3i;
 
+import java.io.IOException;
+
 public interface INucleusMixinWorld {
 
     /**
