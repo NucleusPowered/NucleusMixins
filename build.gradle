@@ -70,7 +70,8 @@ jar {
                 "MixinConfigs": "mixins.nucleus_mixins.json",
                 "tweakClass": "org.spongepowered.asm.launch.MixinTweaker",
                 "TweakOrder": 0,
-                "FMLAT": "nucleus_mixins_at.cfg"
+                "FMLAT": "nucleus_mixins_at.cfg",
+                "ForceLoadAsMod": true
         )
     }
 }
@@ -102,4 +103,13 @@ license {
     mapping {
         java = 'SLASHSTAR_STYLE'
     }
+}
+
+blossom {
+    def location = 'src/main/java/io/github/nucleuspowered/nucleus/mixins/PluginInfo.java'
+
+    replaceToken '@name@', project.name, location
+    replaceToken '@version@', project.version, location
+
+    replaceToken '@description@', project.description, location
 }
