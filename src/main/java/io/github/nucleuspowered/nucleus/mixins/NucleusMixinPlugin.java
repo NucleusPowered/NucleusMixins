@@ -5,7 +5,6 @@
 package io.github.nucleuspowered.nucleus.mixins;
 
 import com.google.common.collect.Lists;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
