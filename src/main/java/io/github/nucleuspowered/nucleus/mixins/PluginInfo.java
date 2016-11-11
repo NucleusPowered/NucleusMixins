@@ -10,11 +10,9 @@ public final class PluginInfo {
     // This isn't going to change now - will break permissions if we have the token.
     public static final String ID = "nucleus-mixin";
 
-    public static final String NAME = "@name@";
-    public static final String VERSION = "@version@";
-    public static final String GIT_HASH = "@gitHash@";
+    public static final String NAME = "Nucleus Mixins";
+    public static final String VERSION = "0.14.0-5.0-SNAPSHOT";
 
     // Preparing for 4.0.0 SpongeAPI
-    public static final String DESCRIPTION = "@description@";
-    public static final String URL = "@url@";
+    public static final String DESCRIPTION = "Nucleus Mixins";
 }
