@@ -37,7 +37,6 @@ public class NucleusInvSeeMixinPlugin implements IMixinConfigPlugin {
     }
 
     @Override public void preApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
-        LoggerFactory.getLogger(NucleusMixinSpongePlugin.class).info("Loading Nucleus Mixin: /invsee tweaks...");
     }
 
     @Override public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
