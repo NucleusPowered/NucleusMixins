@@ -1,0 +1,13 @@
+{
+    "package": "io.github.nucleuspowered.nucleus.mixins.mixin.invsee",
+    "refmap": "mixins.nucleus.refmap.json",
+    "target": "@env(DEFAULT)",
+    "compatibilityLevel": "JAVA_8",
+    "plugin": "io.github.nucleuspowered.nucleus.mixins.plugins.NucleusInvSeeMixinPlugin",
+    "mixins": [
+        "MixinInventoryPlayer"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

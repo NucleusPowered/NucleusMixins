@@ -2,9 +2,11 @@
  * This file is part of NucleusMixins, licensed under the MIT License (MIT). See the LICENSE.txt file
  * at the root of this project for more details.
  */
-package io.github.nucleuspowered.nucleus.mixins;
+package io.github.nucleuspowered.nucleus.mixins.plugins;
 
 import com.google.common.collect.Lists;
+import io.github.nucleuspowered.nucleus.mixins.NucleusMixinSpongePlugin;
+import io.github.nucleuspowered.nucleus.mixins.config.NucleusMixinConfig;
 import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
@@ -13,10 +15,10 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import java.util.List;
 import java.util.Set;
 
-public class NucleusMixinPlugin implements IMixinConfigPlugin {
+public class NucleusWorldGenMixinPlugin implements IMixinConfigPlugin {
 
     @Override public void onLoad(String mixinPackage) {
-        LoggerFactory.getLogger(NucleusMixinSpongePlugin.class).info("Loading Nucleus Mixins...");
+
     }
 
     @Override public String getRefMapperConfig() {
@@ -24,7 +26,7 @@ public class NucleusMixinPlugin implements IMixinConfigPlugin {
     }
 
     @Override public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return true;
+        return NucleusMixinConfig.INSTANCE.config.isWorldgeneration();
     }
 
     @Override public void acceptTargets(Set<String> myTargets, Set<String> otherTargets) {
@@ -36,7 +38,7 @@ public class NucleusMixinPlugin implements IMixinConfigPlugin {
     }
 
     @Override public void preApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {
-
+        LoggerFactory.getLogger(NucleusMixinSpongePlugin.class).info("Loading Nucleus Mixins: World Generation tweaks...");
     }
 
     @Override public void postApply(String targetClassName, ClassNode targetClass, String mixinClassName, IMixinInfo mixinInfo) {

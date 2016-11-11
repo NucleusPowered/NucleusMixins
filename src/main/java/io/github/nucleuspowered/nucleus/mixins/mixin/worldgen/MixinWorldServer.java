@@ -2,7 +2,7 @@
  * This file is part of NucleusMixins, licensed under the MIT License (MIT). See the LICENSE.txt file
  * at the root of this project for more details.
  */
-package io.github.nucleuspowered.nucleus.mixins.mixin;
+package io.github.nucleuspowered.nucleus.mixins.mixin.worldgen;
 
 import io.github.nucleuspowered.nucleus.mixins.interfaces.INucleusMixinWorldServer;
 import net.minecraft.util.IProgressUpdate;

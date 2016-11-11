@@ -1,9 +1,9 @@
 {
-    "package": "io.github.nucleuspowered.nucleus.mixins.mixin",
-    "refmap": "mixins.nucleus_mixins.refmap.json",
+    "package": "io.github.nucleuspowered.nucleus.mixins.mixin.worldgen",
+    "refmap": "mixins.nucleus.refmap.json",
     "target": "@env(DEFAULT)",
     "compatibilityLevel": "JAVA_8",
-    "plugin": "io.github.nucleuspowered.nucleus.mixins.NucleusMixinPlugin",
+    "plugin": "io.github.nucleuspowered.nucleus.mixins.plugins.NucleusWorldGenMixinPlugin",
     "mixins": [
         "MixinAnvilChunkLoader",
         "MixinChunkProviderServer",
