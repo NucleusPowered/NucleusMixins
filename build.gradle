@@ -41,7 +41,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 group 'io.github.nucleuspowered'
-version '0.15.0-5.0'
+version '0.21.0-5.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -53,7 +53,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile 'org.spongepowered:spongeapi:5.0.0-SNAPSHOT'
+    compile 'org.spongepowered:spongeapi:5.0.0'
     compile("org.spongepowered:mixin:0.5.13-SNAPSHOT") {
         exclude module: "launchwrapper"
         exclude module: "guava"
@@ -80,7 +80,7 @@ jar {
 
 minecraft {
     version = "1.10.2"
-    mappings = "snapshot_20160822"
+    mappings = "snapshot_20161129"
 }
 
 reobf.jar {
