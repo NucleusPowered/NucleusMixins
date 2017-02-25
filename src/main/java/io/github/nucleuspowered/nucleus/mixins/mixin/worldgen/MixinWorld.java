@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(World.class)
+@Mixin(value = World.class, priority = 2000)
 public abstract class MixinWorld implements IBlockAccess, INucleusMixinWorld {
 
     @Shadow private IChunkProvider chunkProvider;
