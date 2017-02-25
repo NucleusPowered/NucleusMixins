@@ -21,6 +21,10 @@ public abstract class MixinWorld implements IBlockAccess, INucleusMixinWorld {
     @Shadow private IChunkProvider chunkProvider;
     @Shadow @Final protected ISaveHandler saveHandler;
 
+    @Override public void loadChunkForce(Vector3i position) {
+        ((INucleusMixinChunkProviderServer)chunkProvider).loadForce(position.getX(), position.getZ());
+    }
+
     @Override public boolean hasChunkBeenGenerated(Vector3i position) {
         return ((INucleusMixinChunkProviderServer)chunkProvider).hasBeenLoadedBefore(position);
     }

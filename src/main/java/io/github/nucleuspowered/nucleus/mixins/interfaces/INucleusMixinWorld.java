@@ -10,6 +10,8 @@ import java.io.IOException;
 
 public interface INucleusMixinWorld {
 
+    void loadChunkForce(Vector3i position);
+
     /**
      * Returns whether the specified chunk has been generated
      *
