@@ -9,6 +9,14 @@ import com.flowpowered.math.vector.Vector3i;
 public interface INucleusMixinChunkProviderServer {
 
     /**
+     * Bypasses the deny chunk check.
+     *
+     * @param x The "x" co-ord
+     * @param z The "z" co-ord
+     */
+    void loadForce(int x, int z);
+
+    /**
      * Attempts to see if the chunk in question has been loaded before.
      *
      * @param position A position within the chunk to check.
