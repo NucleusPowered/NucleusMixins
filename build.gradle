@@ -41,7 +41,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 group 'io.github.nucleuspowered'
-version '0.25.1-5.1'
+version '0.25.2-5.1'
 
 repositories {
     mavenCentral()

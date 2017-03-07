@@ -6,8 +6,10 @@ package io.github.nucleuspowered.nucleus.mixins.plugins;
 
 import com.google.common.collect.Lists;
 import io.github.nucleuspowered.nucleus.mixins.NucleusMixinSpongePlugin;
+import io.github.nucleuspowered.nucleus.mixins.PluginInfo;
 import io.github.nucleuspowered.nucleus.mixins.config.NucleusMixinConfig;
 import org.slf4j.LoggerFactory;
+import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -18,6 +20,7 @@ import java.util.Set;
 public class NucleusInvSeeMixinPlugin implements IMixinConfigPlugin {
 
     @Override public void onLoad(String mixinPackage) {
+        PluginInfo.setLoaded();
     }
 
     @Override public String getRefMapperConfig() {

@@ -5,6 +5,7 @@
 package io.github.nucleuspowered.nucleus.mixins.config;
 
 import com.google.common.reflect.TypeToken;
+import io.github.nucleuspowered.nucleus.mixins.PluginInfo;
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.commented.SimpleCommentedConfigurationNode;
 import ninja.leaping.configurate.hocon.HoconConfigurationLoader;
@@ -47,11 +48,11 @@ public class NucleusMixinConfig {
         private boolean invsee = true;
 
         public boolean isWorldgeneration() {
-            return worldgeneration;
+            return PluginInfo.isIsLoaded() && worldgeneration;
         }
 
         public boolean isInvsee() {
-            return invsee;
+            return PluginInfo.isIsLoaded() && invsee;
         }
     }
 }
