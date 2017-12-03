@@ -1,3 +1,5 @@
+### EOL: Nucleus Mixins is no longer receiving updates, as it was designed for 1.10.2 only.
+
 Nucleus Mixins
 ===
 
